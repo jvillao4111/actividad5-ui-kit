@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit - Sistema de Rescates y Adopciones Animales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header style="margin-bottom: 2rem;">
+      <h1>Sistema de Rescate Animal — Librería UI</h1>
+      <p style="color: var(--color-text-muted);">Guía de estilos y componentes reutilizables en CSS3 puro.</p>
+    </header>
+
+    <!-- 1. SECCIÓN DE BOTONES -->
+    <section class="section-block">
+      <h2 class="section-title">1. Botones de Acción</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <button type="button" class="btn btn-primary">Registrar Rescate</button>
+        <button type="button" class="btn btn-secondary">Ver Historial</button>
+        <button type="button" class="btn btn-danger">Reportar Emergencia</button>
+      </div>
+    </section>
+
+    <!-- 2. SECCIÓN DE BADGES / ALERTAS -->
+    <section class="section-block">
+      <h2 class="section-title">2. Alertas y Estados de Urgencia (Badges)</h2>
+      <div class="badge-group">
+        <span class="badge badge-high">Urgencia Alta • Atención Inmediata</span>
+        <span class="badge badge-medium">Urgencia Media • En Observación</span>
+        <span class="badge badge-low">Urgencia Baja • Listo para Adopción</span>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN DE FORMULARIOS -->
+    <section class="section-block">
+      <h2 class="section-title">3. Controles de Formulario</h2>
+      <form class="form-grid">
+        <div class="form-group">
+          <label for="animal-name" class="form-label">Nombre del Animal</label>
+          <input type="text" id="animal-name" class="form-control" placeholder="Ej. Max, Luna...">
+        </div>
+        <div class="form-group">
+          <label for="urgency-level" class="form-label">Nivel de Urgencia</label>
+          <select id="urgency-level" class="form-control">
+            <option value="">Seleccione una opción...</option>
+            <option value="alta">Alta (Herido / Crítico)</option>
+            <option value="media">Media (Desnutrición leve)</option>
+            <option value="baja">Baja (Rescate preventivo)</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <!-- 4. SECCIÓN DE TARJETAS -->
+    <section class="section-block">
+      <h2 class="section-title">4. Tarjetas de Casos (Cards)</h2>
+      <div class="cards-grid">
+        
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Rocky (Canino)</h3>
+            <span class="badge badge-high">Urgencia Alta</span>
+          </div>
+          <div class="card-body">
+            <p>Encontrado con lesión en pata trasera izquierda. Requiere valoración veterinaria inmediata.</p>
+            <p class="card-meta"><strong>Zona:</strong> Sector Norte • <strong>Edad est.:</strong> 2 años</p>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-primary">Atender Caso</button>
+            <button type="button" class="btn btn-secondary">Detalles</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Mishi (Felino)</h3>
+            <span class="badge badge-low">Adopción</span>
+          </div>
+          <div class="card-body">
+            <p>Vacunada, desparasitada y esterilizada. Muy dócil y acostumbrada a convivir en interiores.</p>
+            <p class="card-meta"><strong>Zona:</strong> Refugio Central • <strong>Edad est.:</strong> 8 meses</p>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-primary">Iniciar Adopción</button>
+            <button type="button" class="btn btn-danger">Cancelar</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
