@@ -1,0 +1,251 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN DEL DESIGN SYSTEM (:root y Reset)
+   ========================================================================== */
+:root {
+  /* Paleta de colores corporativa (Rescate y Adopción Animal) */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #475569;
+  --color-secondary-hover: #334155;
+  
+  /* Colores de estado */
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-bg: #fee2e2;
+
+  /* Neutros y superficies */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #cbd5e1;
+
+  /* Tipografía y espaciado */
+  --font-family-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+/* Contenedor principal responsivo */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-block {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-bg);
+}
+
+/* ==========================================================================
+   2. BOTONES (.btn)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Estado accesible al navegar con teclado */
+.btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+.btn-danger:hover {
+  background-color: var(--color-danger-hover);
+}
+.btn-danger:focus-visible {
+  outline-color: rgba(220, 38, 38, 0.4);
+}
+
+/* ==========================================================================
+   3. FORMULARIOS (.form-group, .form-control)
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   4. ALERTAS / BADGES (.badge)
+   ========================================================================== */
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+}
+
+/* Urgencia Alta / Error */
+.badge-high {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+/* Urgencia Media / Advertencia */
+.badge-medium {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+/* Urgencia Baja / Éxito - Disponible */
+.badge-low {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+/* ==========================================================================
+   5. TARJETAS DE ANIMALES (.card)
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 1.25rem 1.25rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 0.5rem 1.25rem 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.card-meta {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.card-footer {
+  padding: 1rem 1.25rem;
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: 0.5rem;
+}
